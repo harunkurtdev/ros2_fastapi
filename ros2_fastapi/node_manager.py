@@ -12,6 +12,18 @@ import rclpy
 import time
 from dataclasses import dataclass
 
+try:
+    from .publisher import PublisherNode
+    from .subscriber import SubscriberNode
+    from .service import ServiceNode
+    from .parameter import ParameterNode
+except ImportError:
+    from publisher import PublisherNode
+    from subscriber import SubscriberNode
+    from service import ServiceNode
+    from parameter import ParameterNode
+
+
 # Models for responses
 @dataclass
 class Response:
@@ -21,7 +33,6 @@ class Response:
     def __post_init__(self):
         if self.timestamp is None:
             self.timestamp = datetime.now().isoformat()
-
 
 
 # Node Manager Class
@@ -98,4 +109,3 @@ class NodeManager:
                 "is_running": self.is_running,
             }
         return status
-
