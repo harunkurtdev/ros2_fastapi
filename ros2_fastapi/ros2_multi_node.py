@@ -12,7 +12,6 @@ import rclpy
 import time
 from dataclasses import dataclass
 
-
 # Models for responses
 @dataclass
 class Response:
