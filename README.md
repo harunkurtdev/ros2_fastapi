@@ -1,26 +1,6 @@
 # ROS2 Multi-Node FastAPI Integration
 
-## Requirements
-
-Create a `requirements.txt` file:
-
-```txt
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-pydantic==2.5.0
-python-multipart==0.0.6
-```
-
-For ROS2 dependencies, you need:
-```bash
-# ROS2 Humble/Iron/Rolling
-sudo apt update
-sudo apt install ros-humble-desktop  # or ros-iron-desktop
-source /opt/ros/humble/setup.bash    # or your ROS2 distro
-
-# Python ROS2 packages
-pip install rclpy
-```
+![media1](./docs/media1.png)
 
 ## Project Structure
 
@@ -221,7 +201,7 @@ COPY . .
 RUN pip install -r requirements.txt
 
 EXPOSE 8000
-CMD ["python", "main.py"]
+CMD ["python", "ros2_fastapi.py"]
 ```
 
 ## Troubleshooting
