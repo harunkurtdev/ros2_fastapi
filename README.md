@@ -1,6 +1,9 @@
 # ROS2 Multi-Node FastAPI Integration
 
 
+![media1](./docs/media1.png)
+
+
 ## Project Structure
 
 ```
