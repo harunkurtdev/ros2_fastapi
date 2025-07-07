@@ -2,11 +2,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+
 try:
     from ros2_multi_node import api_router, initialize_all_nodes, node_manager
 except ImportError:
     from .ros2_multi_node import api_router, initialize_all_nodes, node_manager
-    
+
 # Create FastAPI app
 app = FastAPI(
     title="ROS2 Multi-Node API",
@@ -78,18 +79,18 @@ def main():
     """Main entry point for the FastAPI server"""
     print("🚀 Starting ROS2 Multi-Node FastAPI Server...")
     uvicorn.run(
-        "ros2_fastapi:app",
+        app=app,
         host="0.0.0.0",
         port=8000,
         reload=False,  # Don't use reload with ROS2
-        log_level="info"
+        log_level="info",
     )
 
 
 if __name__ == "__main__":
     print("🚀 Starting ROS2 Multi-Node FastAPI Server...")
     uvicorn.run(
-        "ros2_fastapi:app",
+        app=app,
         host="0.0.0.0",
         port=8000,
         reload=False,  # Don't use reload with ROS2
