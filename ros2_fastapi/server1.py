@@ -77,8 +77,6 @@ class MinimalPublisher(Node):
         self.get_logger().info('Received message: "%s"' % msg.data)
 
 
-
-
 def main(args=None):
     rclpy.init()
     minimal_publisher = MinimalPublisher()
